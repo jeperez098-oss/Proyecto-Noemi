@@ -1,0 +1,356 @@
+
+/* Reiniciar estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo principal */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+    135deg,
+    #ffd6e7,
+    #d7ecff,
+    #b8dfff,
+    #ffe2f0
+);
+background-size: 400% 400%;
+animation: fondoAnimado 12s ease infinite;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+.contenedor{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    animation: aparecerPantalla 1.5s ease;
+}
+
+/* Título */
+h1{
+    font-size: 3rem;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+/* Subtítulo */
+.subtitulo{
+    font-size: 1.3rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+/* Botones */
+.botones{
+    position: relative;
+}
+
+button{
+    border: none;
+    padding: 15px 35px;
+    margin: 10px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+#btnSi{
+    background-color: #4aa3ff;
+    color: white;
+    animation: latido 1.2s infinite;
+    box-shadow: 0 0 20px rgba(74,163,255,.5);
+}
+
+/* Botón No */
+#btnNo{
+background-color: white;
+color: #444;
+position: fixed;
+z-index: 1000;
+}
+
+
+/* Pantalla romántica */
+.pantalla-romantica{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Ocultar elementos */
+.oculto{
+    display: none;
+}
+
+/* Frases románticas */
+#frases{
+    margin-top: 30px;
+    min-height: 120px;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Mensaje final */
+.mensaje-final{
+    margin-top: 50px;
+}
+
+.mensaje-final h2{
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.mensaje-final p{
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Corazones flotantes */
+.corazon{
+    position: fixed;
+    font-size: 25px;
+    animation: flotar 6s linear forwards;
+    pointer-events: none;
+}
+
+/* Animación corazones */
+@keyframes flotar{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+/* Animación del título */
+h1{
+    animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adaptación para celular */
+@media(max-width: 768px){
+
+    h1{
+        font-size: 2.2rem;
+    }
+
+    .subtitulo{
+        font-size: 1.1rem;
+    }
+
+    #frases{
+        font-size: 1.5rem;
+    }
+
+    button{
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+@keyframes fondoAnimado {
+
+    0%{
+        background-position: 0% 50%;
+    }
+
+    50%{
+        background-position: 100% 50%;
+    }
+
+    100%{
+        background-position: 0% 50%;
+    }
+
+}
+
+.contador-amor{
+    margin-top: 30px;
+    color: white;
+    text-align: center;
+}
+
+.contador-amor h2{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#contador{
+    font-size: 1.4rem;
+}
+
+.carta{
+    margin-top: 40px;
+    max-width: 600px;
+    background: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.carta h2{
+    color: white;
+    margin-bottom: 15px;
+}
+
+.carta p{
+    color: white;
+    line-height: 1.8;
+}
+
+
+
+.particulas{
+
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+.particula{
+
+    position: absolute;
+
+    animation: subir linear forwards;
+
+    opacity: .8;
+
+}
+
+@keyframes subir{
+
+    from{
+
+        transform: translateY(100vh) scale(.5);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform: translateY(-120vh) scale(1.3);
+
+        opacity:0;
+
+    }
+
+}
+
+
+#btnMusica{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4aa3ff;
+    color: white;
+    z-index: 1001;
+}
+
+
+#regalo{
+    margin-top: 40px;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.contenedor,
+.pantalla-romantica{
+position: relative;
+z-index: 2;
+}
+
+@keyframes latido{
+
+    0%{
+        transform: scale(1);
+    }
+
+    25%{
+        transform: scale(1.08);
+    }
+
+    50%{
+        transform: scale(1);
+    }
+
+    75%{
+        transform: scale(1.08);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+
+}
+
+@keyframes aparecerPantalla{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
