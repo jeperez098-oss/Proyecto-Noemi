@@ -154,16 +154,25 @@ function explosionCorazones() {
 
 // Contador del tiempo
 
+
 function iniciarContador() {
 
-    // Guardar el instante exacto en que comienza
-    const fechaInicio = new Date();
+    // Recuperar la fecha guardada
+    let fechaGuardada = localStorage.getItem("fechaInicioAmor");
+
+    // Si todavía no existe, guardar el momento actual
+    if (!fechaGuardada) {
+        fechaGuardada = new Date().toISOString();
+        localStorage.setItem("fechaInicioAmor", fechaGuardada);
+    }
+
+    const fechaInicio = new Date(fechaGuardada);
 
     function actualizarContador() {
 
         const ahora = new Date();
 
-        const diferencia = ahora - fechaInicio;
+        const diferencia = Math.max(0, ahora - fechaInicio);
 
         const dias = Math.floor(
             diferencia / (1000 * 60 * 60 * 24)
@@ -184,6 +193,12 @@ function iniciarContador() {
         document.getElementById("contador").textContent =
             `${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos 💗`;
     }
+
+    actualizarContador();
+
+    setInterval(actualizarContador, 1000);
+}
+
 
     // Mostrar inmediatamente el contador en cero
     actualizarContador();
